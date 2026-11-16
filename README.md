@@ -1,7 +1,6 @@
 # Learnable Gegenbauer Activations and Direct Coordinate Regression for Lightweight Lesion Detection
 
 **Authors:** M. Deepthi, G. N. V. R. Vikram (2026)  
-**Target Journal:** *Radioengineering*  
 **Open-Source Repository:** `https://github.com/sirideepu9/gegenbauer-yolov8-mri`  
 *(A permanent Zenodo release archive with DOI will be minted upon camera-ready publication)*
 
