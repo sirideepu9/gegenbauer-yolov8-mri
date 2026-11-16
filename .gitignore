@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Checkpoints and runs
+runs/
+*.pt
+*.pth
+
+# Cache and temporary data
+slice_cache/
+*.npy
+*.nii.gz
+.DS_Store
+.idea/
+.vscode/

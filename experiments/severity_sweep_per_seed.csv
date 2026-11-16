@@ -1,0 +1,26 @@
+severity_level,b_min,canvas_falloff,mean_target_atten,seed,baseline_map50,proposed_map50,margin
+Clean (unattenuated),1.00,0%,0.0%,101,0.9054,0.9529,+0.0475
+Clean (unattenuated),1.00,0%,0.0%,102,0.8990,0.9470,+0.0480
+Clean (unattenuated),1.00,0%,0.0%,103,0.9088,0.9543,+0.0455
+Clean (unattenuated),1.00,0%,0.0%,104,0.9012,0.9542,+0.0530
+Clean (unattenuated),1.00,0%,0.0%,105,0.9007,0.9517,+0.0510
+Mild attenuation,0.85,15%,4.2%,101,0.8994,0.9496,+0.0502
+Mild attenuation,0.85,15%,4.2%,102,0.8945,0.9451,+0.0506
+Mild attenuation,0.85,15%,4.2%,103,0.9042,0.9510,+0.0468
+Mild attenuation,0.85,15%,4.2%,104,0.8973,0.9523,+0.0550
+Mild attenuation,0.85,15%,4.2%,105,0.8954,0.9494,+0.0540
+Moderate attenuation,0.70,30%,8.9%,101,0.8934,0.9464,+0.0530
+Moderate attenuation,0.70,30%,8.9%,102,0.8900,0.9431,+0.0531
+Moderate attenuation,0.70,30%,8.9%,103,0.8997,0.9477,+0.0480
+Moderate attenuation,0.70,30%,8.9%,104,0.8934,0.9504,+0.0570
+Moderate attenuation,0.70,30%,8.9%,105,0.8901,0.9471,+0.0570
+Strong attenuation,0.50,50%,13.5%,101,0.8854,0.9421,+0.0567
+Strong attenuation,0.50,50%,13.5%,102,0.8841,0.9405,+0.0564
+Strong attenuation,0.50,50%,13.5%,103,0.8936,0.9433,+0.0497
+Strong attenuation,0.50,50%,13.5%,104,0.8882,0.9478,+0.0596
+Strong attenuation,0.50,50%,13.5%,105,0.8830,0.9440,+0.0610
+Severe stress,0.35,65%,18.4%,101,0.8794,0.9388,+0.0594
+Severe stress,0.35,65%,18.4%,102,0.8796,0.9386,+0.0590
+Severe stress,0.35,65%,18.4%,103,0.8890,0.9400,+0.0510
+Severe stress,0.35,65%,18.4%,104,0.8843,0.9459,+0.0616
+Severe stress,0.35,65%,18.4%,105,0.8777,0.9417,+0.0640
