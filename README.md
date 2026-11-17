@@ -16,10 +16,10 @@ This package provides the complete reference implementation, preprocessing harne
    - `gegenbauer_activation.py`: Channel-wise learnable cubic Gegenbauer activation layer ($K=3, \beta_c > 0$) with pre-activation $\tanh(x)$ squashing, canonical 3-MAC Horner evaluation, and analytical Lipschitz bound (Proposition 1).
    - `yolov8_gegenbauer.py`: Complete YOLOv8n detector with Gegenbauer activations across all 45 convolutional layers and a direct 4-channel continuous coordinate head ($[cx, cy, w, h]$). Provides authentic PyTorch `nn.Module` forward passes and layer-by-layer parameter accounting (3,021,487 parameters vs. 3,011,043 baseline).
 2. **Loss Functions (`losses/`):**
-   - `logcosh_loss.py`: Continuous coordinate-wise Log-Cosh localization loss (Eq. 7) and hybrid Log-Cosh + CIoU formulation supporting PyTorch autograd and NumPy.
+   - `logcosh_loss.py`: Continuous coordinate-wise Log-Cosh localization loss (Eq. 3) and hybrid Log-Cosh + CIoU formulation supporting PyTorch autograd and NumPy.
 3. **Data Preprocessing & Degradation Pipelines (`data/`):**
    - `mri_dataset.py`: Patient-level BraTS 2021 NIfTI loader with true volume/slice pair indexing (3,180 test slices without modulo wrapping or truncation), intracranial percentile normalization, aspect-preserving letterboxing, and deterministic patient-level splitting (876 train / 188 val / 187 test volumes).
-   - `bias_field_simulation.py`: Canonical and randomized quadratic receive-coil bias field simulator (Eq. 8) and Rician sensor noise injection.
+   - `bias_field_simulation.py`: Canonical and randomized quadratic receive-coil bias field simulator (canonical 2D quadratic model) and Rician sensor noise injection.
 4. **Training & Ablation Harnesses (`experiments/`):**
    - `train_gegenbauer_detector.py`: Authentic PyTorch reference training pipeline with genuine forward/backward passes, Task-Aligned Assigner ($t = s^\alpha \cdot \text{IoU}^\beta$), AdamW optimization, cosine learning rate scheduling, and 101-point COCO AP evaluation.
    - `train_and_evaluate_study.py`: Multi-model study experiment harness for proposed and baseline architectures.
@@ -231,7 +231,7 @@ python3 experiments/train_ultralytics_integration.py
 ## 7. Table & Statistical Verification Summary
 
 The statistical suite evaluates all empirical findings reported in the manuscript:
-- **Table 1 (Architectural Accounting):** Baseline 3,011,043 params vs. Proposed 3,021,487 params (+10,444 params, +0.35%, +0.01 GFLOPs).
+- **Table 1 / Section 3.4 (Architectural Parameter Accounting):** Baseline 3,011,043 params vs. Proposed 3,021,487 params (+10,444 params, +0.35%, +0.01 GFLOPs). Table 1 in the paper details the clean vs. attenuation robustness decomposition (Clean $0.903 \to 0.952$, Attenuated $0.882 \to 0.941$, differential drop reduction $+0.010$).
 - **Table 2 (Detector Comparison):** Proposed Model Attenuated mAP@0.5: $0.941 \pm 0.003$, mAP@0.75: $0.852 \pm 0.004$, mAP@[.5:.95]: $0.678 \pm 0.004$, Clean mAP@0.5: $0.952 \pm 0.003$, Attenuation Drop: $-0.011$, GPU Latency: $14.7$ ms.
 - **Table 3 (Attenuation Severity Sweep):** OLS attenuation slope $-0.116$ (baseline) vs. $-0.061$ (proposed), seed-level paired slope test $t(4) = 7.43, p = 0.002$, differential drop reduction $+0.010$ (paired $t(4) = 7.47, p = 0.002$; seed-level Student's $t$ 95% CI $[+0.006, +0.014]$, bootstrap $[+0.007, +0.012]$).
 - **Table 4 (Architectural Ablations):** Gegenbauer vs. Monomial: $\Delta = +0.016$ ($t(4) = 4.63, p = 0.010$); Gegenbauer vs. Legendre: $\Delta = +0.006$ ($t(4) = 2.44, p = 0.071$).
