@@ -1,4 +1,5 @@
-# Learnable Gegenbauer Activations and Direct Coordinate Regression for Lightweight Lesion Detection
+# Learnable Gegenbauer Activations and Direct Coordinate
+Regression for Lightweight Brain Tumor Detection in MRI
 
 **Authors:** M. Deepthi, G. N. V. R. Vikram (2026)  
 **Open-Source Repository:** `https://github.com/sirideepu9/gegenbauer-yolov8-mri`  
@@ -9,7 +10,8 @@
 ## 1. Overview & Scope
 
 This package provides the complete reference implementation, preprocessing harnesses, authentic PyTorch training engines, and statistical verification suite for the paper:
-> **"Learnable Gegenbauer Activations and Direct Coordinate Regression for Lightweight Lesion Detection"**
+> **"Learnable Gegenbauer Activations and Direct Coordinate
+Regression for Lightweight Brain Tumor Detection in MRI"**
 
 ### What This Package Includes:
 1. **Model Architectures (`models/`):**
